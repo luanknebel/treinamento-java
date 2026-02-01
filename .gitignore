@@ -1,0 +1,9 @@
+target/
+.mvn/wrapper/maven-wrapper.jar
+.classpath
+.project
+.settings
+.settings/*
+/.DS_Store
+/docker/postgresql/data/*
+/docker/postgresql/postgresql/*
