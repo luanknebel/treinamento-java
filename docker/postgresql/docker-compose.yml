@@ -1,0 +1,17 @@
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:18.1-alpine3.23
+    restart: no
+    environment:
+      POSTGRES_USER: postgresql
+      POSTGRES_PASSWORD: postgresql
+      POSTGRES_DB: treinamento
+      PGDATA: /data/postgres
+    ports:
+      - "5432:5432"
+    volumes:
+       - ./data:/data/postgres
+       - ./postgresql:/var/lib/postgresql
+
+
