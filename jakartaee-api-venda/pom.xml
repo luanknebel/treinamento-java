@@ -30,6 +30,7 @@
             <version>${jakartaee-api.version}</version>
             <scope>provided</scope>
         </dependency>
+
     </dependencies>
 
     <build>
