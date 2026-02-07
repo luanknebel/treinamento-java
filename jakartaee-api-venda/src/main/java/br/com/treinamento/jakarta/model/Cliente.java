@@ -1,4 +1,4 @@
-package br.com.treinamento.jakarta.hello.model;
+package br.com.treinamento.jakarta.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,11 +6,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity
-public class Cliente implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Cliente extends AbstractModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +17,11 @@ public class Cliente implements Serializable {
 
     private String nome;
 
+    private LocalDateTime dataNascimento;
+
+    public LocalDateTime getDataNascimento() {
+        return dataNascimento;
+    }
     public Long getId() {
         return id;
     }
@@ -33,4 +37,9 @@ public class Cliente implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public void setDataNascimento(LocalDateTime dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
 }
