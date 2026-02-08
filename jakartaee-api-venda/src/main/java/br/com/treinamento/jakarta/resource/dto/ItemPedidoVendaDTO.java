@@ -7,7 +7,7 @@ public class ItemPedidoVendaDTO extends AbstractDTO {
 
     private Long id;
 
-    private PedidoVendaDTO pedidoVenda;
+    private Long idPedido;
 
     private ProdutoDTO produto;
 
@@ -33,12 +33,12 @@ public class ItemPedidoVendaDTO extends AbstractDTO {
         this.produto = produto;
     }
 
-    public PedidoVendaDTO getPedidoVenda() {
-        return pedidoVenda;
+    public Long getIdPedido() {
+        return idPedido;
     }
 
-    public void setPedidoVenda(PedidoVendaDTO pedidoVenda) {
-        this.pedidoVenda = pedidoVenda;
+    public void setIdPedido(Long idPedido) {
+        this.idPedido = idPedido;
     }
 
     public void setId(Long id) {

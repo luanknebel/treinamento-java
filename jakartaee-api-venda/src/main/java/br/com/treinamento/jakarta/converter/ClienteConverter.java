@@ -3,23 +3,24 @@ package br.com.treinamento.jakarta.converter;
 import br.com.treinamento.jakarta.model.Cliente;
 import br.com.treinamento.jakarta.resource.dto.ClienteDTO;
 
-public class ClienteConverter {
+public class ClienteConverter implements IConverter<Cliente, ClienteDTO>{
 
-    public ClienteDTO convertTODTO(Cliente cliente){
-        ClienteDTO clienteDTO = new ClienteDTO();
-        clienteDTO.setId(cliente.getId());
-        clienteDTO.setNome(cliente.getNome());
-        clienteDTO.setDataCadastro(cliente.getDataCadastro());
 
-        return clienteDTO;
+    @Override
+    public ClienteDTO convertTODTO(Cliente entity) {
+        ClienteDTO dto = new ClienteDTO();
+        dto.setId(entity.getId());
+        dto.setNome(entity.getNome());
+        dto.setDataCadastro(entity.getDataCadastro());
+        return dto;
     }
 
-    public Cliente converTOEntity(ClienteDTO clienteDTO) {
+    @Override
+    public Cliente convertTOEntity(ClienteDTO dto) {
         Cliente cliente = new Cliente();
-        cliente.setId(clienteDTO.getId());
-        cliente.setNome(clienteDTO.getNome());
-        cliente.setDataCadastro(clienteDTO.getDataCadastro());
-
+        cliente.setId(dto.getId());
+        cliente.setNome(dto.getNome());
+        cliente.setDataCadastro(dto.getDataCadastro());
         return cliente;
     }
 }

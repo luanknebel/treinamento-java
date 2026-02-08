@@ -15,7 +15,7 @@ import jakarta.ws.rs.core.MediaType;
 @Path( "usuario")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class UsuarioResource {
+public class UsuarioResource extends AbstractResource<Usuario, UsuarioDTO>{
 
     @Inject
     private UsuarioService usuarioService;
@@ -23,29 +23,13 @@ public class UsuarioResource {
     @Inject
     private UsuarioConverter usuarioConverter;
 
-    @GET
-    @Path("{id}")
-    public UsuarioDTO find(@PathParam("id") Long id){
-        Usuario usuario = usuarioService.find(id);
-        return usuarioConverter.convertTODTO(usuario);
+    @Override
+    public IService<Usuario> getService() {
+        return usuarioService;
     }
 
-    @POST
-    public void persist(UsuarioDTO usuarioDTO){
-        Usuario usuario = usuarioConverter.converterTOEntity(usuarioDTO);
-        usuarioService.persist(usuario);
+    @Override
+    public IConverter<Usuario, UsuarioDTO> getConverter() {
+        return usuarioConverter;
     }
-
-    @PUT
-    public void update(UsuarioDTO clienteDTO){
-        Usuario usuario = usuarioConverter.converterTOEntity(clienteDTO);
-        usuarioService.update(usuario);
-    }
-
-    @DELETE
-    @Path("{id}")
-    public void delete(@PathParam("id") Long id){
-        usuarioService.delete(id);
-    }
-
 }

@@ -3,24 +3,27 @@ package br.com.treinamento.jakarta.converter;
 import br.com.treinamento.jakarta.model.Usuario;
 import br.com.treinamento.jakarta.resource.dto.UsuarioDTO;
 
-public class UsuarioConverter {
+public class UsuarioConverter implements IConverter<Usuario, UsuarioDTO>{
 
-     public UsuarioDTO convertTODTO(Usuario usuario){
-        UsuarioDTO usuarioDTO = new UsuarioDTO();
-        usuarioDTO.setId(usuario.getId());
-        usuarioDTO.setLogin(usuario.getLogin());
-        usuarioDTO.setSenha(usuario.getSenha());
-        usuarioDTO.setAtivo(usuario.getAtivo());
-        return usuarioDTO;
+    @Override
+    public UsuarioDTO convertTODTO(Usuario entity) {
+        UsuarioDTO dto = new UsuarioDTO();
+        dto.setId(entity.getId());
+        dto.setLogin(entity.getLogin());
+        dto.setSenha(entity.getSenha());
+        dto.setAtivo(entity.getAtivo());
+
+        return dto;
     }
 
-    public Usuario converterTOEntity(UsuarioDTO usuarioDTO){
-        Usuario usuario = new Usuario();
-        usuario.setId(usuarioDTO.getId());
-        usuario.setLogin(usuarioDTO.getLogin());
-        usuario.setSenha(usuarioDTO.getSenha());
-        usuario.setAtivo(usuarioDTO.getAtivo());
-        return usuario;
-    }
+    @Override
+    public Usuario convertTOEntity(UsuarioDTO dto) {
+        Usuario entity = new Usuario();
+        entity.setId(dto.getId());
+        entity.setLogin(dto.getLogin());
+        entity.setSenha(dto.getSenha());
+        entity.setAtivo(dto.getAtivo());
 
+        return entity;
+    }
 }

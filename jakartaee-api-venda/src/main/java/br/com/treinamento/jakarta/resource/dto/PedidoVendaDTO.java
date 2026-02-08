@@ -10,9 +10,9 @@ public class PedidoVendaDTO extends AbstractDTO {
 
     private Long id;
 
-    private Cliente cliente;
+    private ClienteDTO cliente;
 
-    private Usuario usuario;
+    private UsuarioDTO usuario;
 
     private BigDecimal valorTotal;
 
@@ -38,19 +38,19 @@ public class PedidoVendaDTO extends AbstractDTO {
         this.itens = itens;
     }
 
-    public Usuario getUsuario() {
+    public UsuarioDTO getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(UsuarioDTO usuario) {
         this.usuario = usuario;
     }
 
-    public Cliente getCliente() {
+    public ClienteDTO getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(ClienteDTO cliente) {
         this.cliente = cliente;
     }
 
