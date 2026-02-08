@@ -2,7 +2,7 @@ package br.com.treinamento.jakarta.service.impl;
 
 import br.com.treinamento.jakarta.model.AbstractModel;
 import br.com.treinamento.jakarta.service.IService;
-import br.com.treinamento.jakarta.service.impl.repository.AbstractRepository;
+import br.com.treinamento.jakarta.repository.AbstractRepository;
 
 public abstract class IServiceImpl<T extends AbstractModel> implements IService<T> {
 

@@ -1,4 +1,4 @@
-package br.com.treinamento.jakarta.service.impl.repository;
+package br.com.treinamento.jakarta.repository;
 
 import br.com.treinamento.jakarta.model.Cliente;
 

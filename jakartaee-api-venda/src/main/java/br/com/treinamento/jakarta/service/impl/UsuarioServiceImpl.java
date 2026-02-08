@@ -2,8 +2,8 @@ package br.com.treinamento.jakarta.service.impl;
 
 import br.com.treinamento.jakarta.model.Usuario;
 import br.com.treinamento.jakarta.service.UsuarioService;
-import br.com.treinamento.jakarta.service.impl.repository.AbstractRepository;
-import br.com.treinamento.jakarta.service.impl.repository.UsuarioRepository;
+import br.com.treinamento.jakarta.repository.AbstractRepository;
+import br.com.treinamento.jakarta.repository.UsuarioRepository;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
