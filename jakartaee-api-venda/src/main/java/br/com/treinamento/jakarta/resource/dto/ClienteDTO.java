@@ -1,8 +1,6 @@
 package br.com.treinamento.jakarta.resource.dto;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class ClienteDTO extends AbstractDTO{
 
@@ -10,7 +8,7 @@ public class ClienteDTO extends AbstractDTO{
 
     private String nome;
 
-    private LocalDateTime dataNascimento;
+    private LocalDateTime dataCadastro;
 
     public String getNome() {
         return nome;
@@ -20,12 +18,12 @@ public class ClienteDTO extends AbstractDTO{
         this.nome = nome;
     }
 
-    public LocalDateTime getDataNascimento() {
-        return dataNascimento;
+    public LocalDateTime getDataCadastro() {
+        return dataCadastro;
     }
 
-    public void setDataNascimento(LocalDateTime dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setDataCadastro(LocalDateTime dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 
     @Override

@@ -5,7 +5,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
@@ -17,10 +16,10 @@ public class Cliente extends AbstractModel {
 
     private String nome;
 
-    private LocalDateTime dataNascimento;
+    private LocalDateTime dataCadastro;
 
-    public LocalDateTime getDataNascimento() {
-        return dataNascimento;
+    public LocalDateTime getDataCadastro() {
+        return dataCadastro;
     }
     public Long getId() {
         return id;
@@ -38,8 +37,8 @@ public class Cliente extends AbstractModel {
         this.nome = nome;
     }
 
-    public void setDataNascimento(LocalDateTime dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setDataCadastro(LocalDateTime dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 
 }

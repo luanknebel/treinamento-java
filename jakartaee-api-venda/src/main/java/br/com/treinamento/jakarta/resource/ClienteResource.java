@@ -30,18 +30,18 @@ public class ClienteResource {
     @Path("{id}")
     public ClienteDTO find(@PathParam("id") Long id){
         Cliente cliente = clienteService.find(id);
-        return clienteConverter.converterTODTO(cliente);
+        return clienteConverter.convertTODTO(cliente);
     }
 
     @POST
     public void persist(ClienteDTO clienteDTO){
-        Cliente cliente = clienteConverter.converterTOEntity(clienteDTO);
+        Cliente cliente = clienteConverter.converTOEntity(clienteDTO);
         clienteService.persist(cliente);
     }
 
     @PUT
     public void update(ClienteDTO clienteDTO){
-        Cliente cliente = clienteConverter.converterTOEntity(clienteDTO);
+        Cliente cliente = clienteConverter.converTOEntity(clienteDTO);
         clienteService.update(cliente);
     }
 

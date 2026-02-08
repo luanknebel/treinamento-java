@@ -5,20 +5,20 @@ import br.com.treinamento.jakarta.resource.dto.ClienteDTO;
 
 public class ClienteConverter {
 
-    public ClienteDTO converterTODTO(Cliente cliente){
+    public ClienteDTO convertTODTO(Cliente cliente){
         ClienteDTO clienteDTO = new ClienteDTO();
         clienteDTO.setId(cliente.getId());
         clienteDTO.setNome(cliente.getNome());
-        clienteDTO.setDataNascimento(cliente.getDataNascimento());
+        clienteDTO.setDataCadastro(cliente.getDataCadastro());
 
         return clienteDTO;
     }
 
-    public Cliente converterTOEntity(ClienteDTO clienteDTO) {
+    public Cliente converTOEntity(ClienteDTO clienteDTO) {
         Cliente cliente = new Cliente();
         cliente.setId(clienteDTO.getId());
         cliente.setNome(clienteDTO.getNome());
-        cliente.setDataNascimento(clienteDTO.getDataNascimento());
+        cliente.setDataCadastro(clienteDTO.getDataCadastro());
 
         return cliente;
     }
