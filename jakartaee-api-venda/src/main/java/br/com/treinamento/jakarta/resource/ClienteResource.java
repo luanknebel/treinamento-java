@@ -23,7 +23,6 @@ public class ClienteResource extends AbstractResource<Cliente, ClienteDTO>{
     @Inject
     private ClienteConverter clienteConverter;
 
-
     @Override
     public IService<Cliente> getService() {
         return clienteService;
@@ -33,4 +32,5 @@ public class ClienteResource extends AbstractResource<Cliente, ClienteDTO>{
     public IConverter<Cliente, ClienteDTO> getConverter() {
         return clienteConverter;
     }
+
 }

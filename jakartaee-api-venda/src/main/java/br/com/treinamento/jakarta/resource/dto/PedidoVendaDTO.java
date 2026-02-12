@@ -4,6 +4,7 @@ import br.com.treinamento.jakarta.model.Cliente;
 import br.com.treinamento.jakarta.model.Usuario;
 
 import java.math.BigDecimal;
+import java.util.Collection;
 import java.util.Set;
 
 public class PedidoVendaDTO extends AbstractDTO {
@@ -16,7 +17,7 @@ public class PedidoVendaDTO extends AbstractDTO {
 
     private BigDecimal valorTotal;
 
-    private Set<ItemPedidoVendaDTO> itens;
+    private Collection<ItemPedidoVendaDTO> itens;
 
     public void setId(Long id) {
         this.id = id;
@@ -30,11 +31,11 @@ public class PedidoVendaDTO extends AbstractDTO {
         this.valorTotal = valorTotal;
     }
 
-    public Set<ItemPedidoVendaDTO> getItens() {
+    public Collection<ItemPedidoVendaDTO> getItens() {
         return itens;
     }
 
-    public void setItens(Set<ItemPedidoVendaDTO> itens) {
+    public void setItens(Collection<ItemPedidoVendaDTO> itens) {
         this.itens = itens;
     }
 

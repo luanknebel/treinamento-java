@@ -34,5 +34,13 @@ public abstract class AbstractRepository<T extends AbstractModel> {
          return entityManager.find(getEntityClass(), id);
     };
 
+    public T findValidate(Long id){
+        T entity = entityManager.find(getEntityClass(), id);
+        if(Objects.isNull(entity)){
+            throw new RuntimeException("Entity " + getEntityClass().getName() + " not found with id: " + id);
+        }
+        return entity;
+    }
+
     public abstract Class<T> getEntityClass();
 }
