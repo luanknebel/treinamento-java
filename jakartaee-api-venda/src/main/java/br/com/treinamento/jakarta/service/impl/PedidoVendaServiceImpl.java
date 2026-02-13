@@ -32,7 +32,11 @@ public class PedidoVendaServiceImpl extends IServiceImpl<PedidoVenda> implements
 
     @Override
     public void beforePersist(PedidoVenda pedidoVenda) {
-        calcularValorTotalPedido(pedidoVenda.getId());
+        if(Objects.isNull(pedidoVenda.getId())){
+            pedidoVenda.setValorTotal(BigDecimal.ZERO);
+        }else{
+            calcularValorTotalPedido(pedidoVenda.getId());
+        }
     }
 
     public void calcularValorTotalPedido(Long idPedido){
