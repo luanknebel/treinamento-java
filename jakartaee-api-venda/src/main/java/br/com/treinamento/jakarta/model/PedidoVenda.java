@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -28,6 +29,7 @@ public class PedidoVenda extends AbstractModel{
     @Column(nullable = false)
     private BigDecimal valorTotal;
 
+    @OneToMany(mappedBy = "pedidoVenda")
     private Set<ItemPedidoVenda> itens;
 
     public void setId(Long id) {

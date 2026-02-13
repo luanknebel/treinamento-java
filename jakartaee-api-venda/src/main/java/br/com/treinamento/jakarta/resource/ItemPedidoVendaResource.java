@@ -32,5 +32,6 @@ public class ItemPedidoVendaResource extends AbstractResource<ItemPedidoVenda, I
     public IConverter<ItemPedidoVenda, ItemPedidoVendaDTO> getConverter() {
         return itemPedidoVendaConverter;
     }
+
 }
 
