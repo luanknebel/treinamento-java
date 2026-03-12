@@ -9,4 +9,6 @@ public interface PedidoVendaService extends IService<PedidoVenda>{
 
     public void descontarValorTotalPedido(ItemPedidoVenda itemPedidoVenda);
 
+    public PedidoVenda teste();
+
 }

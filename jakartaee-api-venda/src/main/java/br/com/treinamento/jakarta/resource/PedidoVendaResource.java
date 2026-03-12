@@ -8,6 +8,7 @@ import br.com.treinamento.jakarta.service.IService;
 import br.com.treinamento.jakarta.service.PedidoVendaService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
@@ -22,6 +23,14 @@ public class PedidoVendaResource extends AbstractResource<PedidoVenda, PedidoVen
 
     @Inject
     private PedidoVendaConverter pedidoVendaConverter;
+
+    @GET
+    @Path("teste")
+    public void testeLazyPedido(){
+        PedidoVenda pedidoVenda = pedidoVendaService.teste();
+        System.out.println(pedidoVenda.getCliente().getNome());
+        System.out.println(pedidoVenda.getUsuario().getLogin());
+    }
 
     @Override
     public IService<PedidoVenda> getService() {

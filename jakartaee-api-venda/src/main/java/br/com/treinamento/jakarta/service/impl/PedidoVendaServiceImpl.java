@@ -20,6 +20,9 @@ public class PedidoVendaServiceImpl extends IServiceImpl<PedidoVenda> implements
     @Inject
     private PedidoVendaRepository pedidoVendaRepository;
 
+    @Inject
+    private CalculaTotalDescontoPedido calculaTotalDescontoPedido;
+
     @Override
     public AbstractRepository<PedidoVenda> getRepository() {
         return pedidoVendaRepository;
@@ -36,8 +39,10 @@ public class PedidoVendaServiceImpl extends IServiceImpl<PedidoVenda> implements
     }
 
     public void calcularValorTotalPedido(Long idPedido){
+
         PedidoVenda pedidoVenda = pedidoVendaRepository.findValidate(idPedido);
         pedidoVenda.setValorTotal(BigDecimal.ZERO);
+
 
         BigDecimal valorTotal = BigDecimal.ZERO;
         Collection<ItemPedidoVenda> itens = CollectionUtil.getNotNull(pedidoVenda.getItens());
@@ -56,6 +61,13 @@ public class PedidoVendaServiceImpl extends IServiceImpl<PedidoVenda> implements
         BigDecimal valorItem = itemPedidoVenda.getValorUnitario().multiply(itemPedidoVenda.getQuantidade());
         pedidoVenda.setValorTotal(valorTotal.subtract(valorItem));
         pedidoVendaRepository.merge(pedidoVenda);
+    }
+
+    @Override
+    public PedidoVenda teste() {
+        PedidoVenda pedidoVenda = pedidoVendaRepository.findFetch(2l);
+        calculaTotalDescontoPedido.calcular(pedidoVenda);
+        return pedidoVenda;
     }
 
 }

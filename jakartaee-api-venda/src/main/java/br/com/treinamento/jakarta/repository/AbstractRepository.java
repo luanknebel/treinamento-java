@@ -43,4 +43,8 @@ public abstract class AbstractRepository<T extends AbstractModel> {
     }
 
     public abstract Class<T> getEntityClass();
+
+    public EntityManager getEntityManager() {
+        return entityManager;
+    }
 }
